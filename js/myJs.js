@@ -18,6 +18,9 @@ const textConfig = {
 };
 
 $(document).ready(function () {
+  var backgroundMusic = new Audio("../sound/ctcht.mp3");
+  backgroundMusic.loop = true;
+
   // process bar
   setTimeout(function () {
     showPasswordPopup();
@@ -52,6 +55,7 @@ $(document).ready(function () {
       },
     }).then((result) => {
       if (result.isConfirmed) {
+        backgroundMusic.play();
         firstQuestion();
       }
     });
